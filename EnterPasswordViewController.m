@@ -8,6 +8,7 @@
 
 #import "EnterPasswordViewController.h"
 #import "CreditCardBrain.h"
+#import "StorageBrain.h"
 
 @interface EnterPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *Password;
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *CancelButton;
 @property (strong, nonatomic) UIColor *BadColor;
 @property (strong, nonatomic) NSString *CardTitle;
-@property BOOL CreditCardAdded;
+@property BOOL CreditCardDeleted;
 @end
 
 @implementation EnterPasswordViewController
@@ -50,6 +51,14 @@
         // Custom initialization
     }
     return self;
+}
+- (IBAction)CancelPush:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)DeletePushed:(id)sender {
+    self.CreditCardDeleted = YES;
+    [StorageBrain removeCardWithTitle:self.CardTitle];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
@@ -82,7 +91,6 @@
     else
     {
         self.Password.backgroundColor = self.BadColor;
-
         self.RespondToUser.text = @"Invalid Password";
     }
 }
@@ -97,7 +105,7 @@
 #pragma mark - Responses and connections
 -(BOOL)NumberofCardsChanged:(CreditCardSelectController *)sender
 {
-    if (self.CreditCardAdded)
+    if (self.CreditCardDeleted)
     {
         return YES;
     }
