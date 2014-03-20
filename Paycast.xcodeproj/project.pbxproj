@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1EE57C183D47F600FA7721 /* CreditCardBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1EE57B183D47F600FA7721 /* CreditCardBrain.m */; };
+		DB59BD32184672250071A9EB /* EditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB59BD31184672250071A9EB /* EditCardViewController.m */; };
 		DB652B95182C4FA5002B64F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652B94182C4FA5002B64F4 /* Foundation.framework */; };
 		DB652B97182C4FA5002B64F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652B96182C4FA5002B64F4 /* CoreGraphics.framework */; };
 		DB652B99182C4FA5002B64F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652B98182C4FA5002B64F4 /* UIKit.framework */; };
@@ -19,11 +21,9 @@
 		DB652BB4182C4FA6002B64F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652BB3182C4FA6002B64F4 /* XCTest.framework */; };
 		DB652BB5182C4FA6002B64F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652B94182C4FA5002B64F4 /* Foundation.framework */; };
 		DB652BB6182C4FA6002B64F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB652B98182C4FA5002B64F4 /* UIKit.framework */; };
-		DB652BBE182C4FA6002B64F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB652BBC182C4FA6002B64F4 /* InfoPlist.strings */; };
-		DB652BC0182C4FA6002B64F4 /* PaycastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB652BBF182C4FA6002B64F4 /* PaycastTests.m */; };
+		DB95788218A48A5500107D3C /* EnterPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB95788118A48A5500107D3C /* EnterPasswordViewController.m */; };
 		DBE143B21832BE7B005666F2 /* CreditCardSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE143B11832BE7B005666F2 /* CreditCardSelectController.m */; };
 		DBE143B51832C286005666F2 /* StorageBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE143B41832C286005666F2 /* StorageBrain.m */; };
-		DBF27612182C6D9A0094C445 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF27611182C6D9A0094C445 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB1EE57A183D47F600FA7721 /* CreditCardBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardBrain.h; sourceTree = "<group>"; };
+		DB1EE57B183D47F600FA7721 /* CreditCardBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardBrain.m; sourceTree = "<group>"; };
+		DB59BD30184672250071A9EB /* EditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCardViewController.h; sourceTree = "<group>"; };
+		DB59BD31184672250071A9EB /* EditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCardViewController.m; sourceTree = "<group>"; };
 		DB652B91182C4FA5002B64F4 /* Paycast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paycast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB652B94182C4FA5002B64F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB652B96182C4FA5002B64F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,15 +57,12 @@
 		DB652BAC182C4FA6002B64F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB652BB2182C4FA6002B64F4 /* PaycastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaycastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB652BB3182C4FA6002B64F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DB652BBB182C4FA6002B64F4 /* PaycastTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PaycastTests-Info.plist"; sourceTree = "<group>"; };
-		DB652BBD182C4FA6002B64F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB652BBF182C4FA6002B64F4 /* PaycastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaycastTests.m; sourceTree = "<group>"; };
+		DB95788018A48A5500107D3C /* EnterPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnterPasswordViewController.h; path = ../EnterPasswordViewController.h; sourceTree = "<group>"; };
+		DB95788118A48A5500107D3C /* EnterPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnterPasswordViewController.m; path = ../EnterPasswordViewController.m; sourceTree = "<group>"; };
 		DBE143B01832BE7B005666F2 /* CreditCardSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditCardSelectController.h; path = ../CreditCardSelectController.h; sourceTree = "<group>"; };
 		DBE143B11832BE7B005666F2 /* CreditCardSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditCardSelectController.m; path = ../CreditCardSelectController.m; sourceTree = "<group>"; };
 		DBE143B31832C286005666F2 /* StorageBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageBrain.h; sourceTree = "<group>"; };
 		DBE143B41832C286005666F2 /* StorageBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageBrain.m; sourceTree = "<group>"; };
-		DBF27610182C6D9A0094C445 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DBF27611182C6D9A0094C445 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				DB652B9A182C4FA5002B64F4 /* Paycast */,
-				DBF27610182C6D9A0094C445 /* ViewController.h */,
-				DBF27611182C6D9A0094C445 /* ViewController.m */,
-				DB652BB9182C4FA6002B64F4 /* PaycastTests */,
 				DB652B93182C4FA5002B64F4 /* Frameworks */,
 				DB652B92182C4FA5002B64F4 /* Products */,
 			);
@@ -123,8 +121,12 @@
 		DB652B9A182C4FA5002B64F4 /* Paycast */ = {
 			isa = PBXGroup;
 			children = (
+				DB95788018A48A5500107D3C /* EnterPasswordViewController.h */,
+				DB95788118A48A5500107D3C /* EnterPasswordViewController.m */,
 				DBE143B01832BE7B005666F2 /* CreditCardSelectController.h */,
 				DBE143B11832BE7B005666F2 /* CreditCardSelectController.m */,
+				DB59BD30184672250071A9EB /* EditCardViewController.h */,
+				DB59BD31184672250071A9EB /* EditCardViewController.m */,
 				DB652BA3182C4FA5002B64F4 /* CreditCardsAppDelegate.h */,
 				DB652BA4182C4FA5002B64F4 /* CreditCardsAppDelegate.m */,
 				DB652BA6182C4FA6002B64F4 /* Main.storyboard */,
@@ -132,6 +134,8 @@
 				DB652BAA182C4FA6002B64F4 /* MainscreenViewController.m */,
 				DBE143B31832C286005666F2 /* StorageBrain.h */,
 				DBE143B41832C286005666F2 /* StorageBrain.m */,
+				DB1EE57A183D47F600FA7721 /* CreditCardBrain.h */,
+				DB1EE57B183D47F600FA7721 /* CreditCardBrain.m */,
 				DB652BAC182C4FA6002B64F4 /* Images.xcassets */,
 				DB652B9B182C4FA5002B64F4 /* Supporting Files */,
 			);
@@ -145,24 +149,6 @@
 				DB652B9D182C4FA5002B64F4 /* InfoPlist.strings */,
 				DB652BA0182C4FA5002B64F4 /* main.m */,
 				DB652BA2182C4FA5002B64F4 /* Paycast-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DB652BB9182C4FA6002B64F4 /* PaycastTests */ = {
-			isa = PBXGroup;
-			children = (
-				DB652BBF182C4FA6002B64F4 /* PaycastTests.m */,
-				DB652BBA182C4FA6002B64F4 /* Supporting Files */,
-			);
-			path = PaycastTests;
-			sourceTree = "<group>";
-		};
-		DB652BBA182C4FA6002B64F4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB652BBB182C4FA6002B64F4 /* PaycastTests-Info.plist */,
-				DB652BBC182C4FA6002B64F4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,7 +198,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CreditCards;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Elon Weintraub";
 				TargetAttributes = {
 					DB652BB1182C4FA6002B64F4 = {
@@ -254,7 +240,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB652BBE182C4FA6002B64F4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,11 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB95788218A48A5500107D3C /* EnterPasswordViewController.m in Sources */,
 				DB652BA1182C4FA5002B64F4 /* main.m in Sources */,
 				DB652BA5182C4FA5002B64F4 /* CreditCardsAppDelegate.m in Sources */,
+				DB59BD32184672250071A9EB /* EditCardViewController.m in Sources */,
 				DBE143B51832C286005666F2 /* StorageBrain.m in Sources */,
 				DBE143B21832BE7B005666F2 /* CreditCardSelectController.m in Sources */,
-				DBF27612182C6D9A0094C445 /* ViewController.m in Sources */,
+				DB1EE57C183D47F600FA7721 /* CreditCardBrain.m in Sources */,
 				DB652BAB182C4FA6002B64F4 /* MainscreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB652BC0182C4FA6002B64F4 /* PaycastTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +295,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DB652BBC182C4FA6002B64F4 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB652BBD182C4FA6002B64F4 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -324,7 +302,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -363,7 +340,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -421,7 +397,6 @@
 		DB652BC7182C4FA7002B64F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Paycast.app/Paycast";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -444,7 +419,6 @@
 		DB652BC8182C4FA7002B64F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Paycast.app/Paycast";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

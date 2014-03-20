@@ -8,5 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreditCardSelectController;
+@protocol CreditCardSelectControllerDelegate <NSObject>
+@required
+-(BOOL)NumberofCardsChanged:(CreditCardSelectController *)sender;
+@end
+
 @interface CreditCardSelectController : UITableViewController
+@property (nonatomic, weak) id <CreditCardSelectControllerDelegate> delegate;
 @end
