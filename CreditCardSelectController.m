@@ -133,7 +133,7 @@
         EnterPasswordViewController *Destination = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [Destination AttemptCard:[self.CurrentCards objectAtIndex:indexPath.row]];
-        self.delegate = segue.destinationViewController;
+        self.delegate = Destination;
         
     }
     // Get the new view controller using [segue destinationViewController].

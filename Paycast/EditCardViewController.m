@@ -11,7 +11,7 @@
 
 @interface EditCardViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *Title;
-@property (weak, nonatomic) IBOutlet UITextField *CardNumber;
+@property (weak, nonatomic) IBOutlet UITextField *Number;
 @property (strong, nonatomic) IBOutlet UIView *MainView;
 @property (weak, nonatomic) IBOutlet UITextField *HolderName;
 @property (weak, nonatomic) IBOutlet UITextField *CVN;
@@ -35,7 +35,7 @@
 const int pullUp = -215;//Enough to get out from Keyboard. Note:Positive moves down?
 const float pullUpTime = 0.3f;
 @synthesize GoodTitle, GoodCardNumber, GoodCVN, GoodExpDate, GoodHoldername, GoodPassword, PasswordsMatch, CreditCardAdded;
-@synthesize Title,HolderName, RetypePass, Password, CardNumber, ExpDate, CVN, dateString;
+@synthesize Title,HolderName, RetypePass, Password, Number, ExpDate, CVN, dateString;
 @synthesize GoodColor = _GoodColor;
 @synthesize BadColor = _BadColor;
 @synthesize dateFormat = _dateFormat;
@@ -87,6 +87,16 @@ const float pullUpTime = 0.3f;
     self.CancelButton.layer.cornerRadius = 10.0;
     self.CancelButton.layer.borderWidth = 1.0;
     //Hopefully make our buttons look a little nicer
+}
+#pragma mark - Load Existing Card
+-(void)EditCardWithTitle:(NSString *)cardTitle withHolder:(NSString *)cardHolderName withNumber:(NSString *)cardNumber withCVN:(NSString *)cardCVN withExpiration:(NSString *)cardExpiration
+{
+    self.Title.text = cardTitle;
+    self.Number.text = cardNumber;
+    self.HolderName.text = cardHolderName;
+    self.CVN.text = cardCVN;
+    self.ExpDate.date = [self.dateFormat dateFromString:cardExpiration];
+    [self.view setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -157,21 +167,21 @@ const float pullUpTime = 0.3f;
     NSString *Regex = @"^\\d{16}$";
     NSPredicate *Test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", Regex];
     
-    if ([self.CardNumber.text isEqualToString:self.CardNumber.placeholder])
+    if ([self.Number.text isEqualToString:self.Number.placeholder])
     {
         self.GoodCardNumber = NO;
         
     }
-       else if ([Test evaluateWithObject:self.CardNumber.text])
+       else if ([Test evaluateWithObject:self.Number.text])
     {
         self.GoodCardNumber = YES;
-        self.CardNumber.backgroundColor = self.GoodColor;
+        self.Number.backgroundColor = self.GoodColor;
     }
        else {
-           self.CardNumber.backgroundColor = self.BadColor;
+           self.Number.backgroundColor = self.BadColor;
            self.GoodCardNumber = NO;
        }
-    [self.CardNumber setNeedsDisplay];
+    [self.Number setNeedsDisplay];
     [sender resignFirstResponder];
 }
 - (IBAction)CVNEntered:(id)sender {
@@ -222,7 +232,7 @@ const float pullUpTime = 0.3f;
     {
         maxLength = 3;
     }
-    else if ([textField isEqual:self.CardNumber])
+    else if ([textField isEqual:self.Number])
     {
         maxLength = 16;
     }
@@ -258,7 +268,7 @@ const float pullUpTime = 0.3f;
     if ((self.GoodTitle && self.GoodHoldername && self.GoodCardNumber && self.GoodCVN && self.GoodExpDate && self.PasswordsMatch) || 1)
     {
         //Validate Card - Not implemented
-        StorageBrain *EnterCard =  [StorageBrain newCardFromUserDataWithTitle:self.Title.text withHolder:self.HolderName.text withNumber:self.CardNumber.text withCVN:self.CVN.text withExpiration:self.dateString withPass:self.Password.text];
+        StorageBrain *EnterCard =  [StorageBrain newCardFromUserDataWithTitle:self.Title.text withHolder:self.HolderName.text withNumber:self.Number.text withCVN:self.CVN.text withExpiration:self.dateString withPass:self.Password.text];
         [EnterCard storeCards];
         NSDictionary *CardAndPass = [NSDictionary dictionaryWithObject:self.Title.text forKey:@"CurrentCard"];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"CurrentCard" object:self userInfo:CardAndPass];

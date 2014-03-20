@@ -70,9 +70,9 @@ const NSUInteger kPBKDFSaltSize = 8;
     [FindCard retrieveFromStorage];
     Card.Title = Title;
     NSData *CardData = [NSData dataWithData:[FindCard.CreditCards valueForKey:Title]];
-    int saltStartsAt = CardData.length - kPBKDFSaltSize;
-    int ivStartsAt = CardData.length - kPBKDFSaltSize - kAlgorithmIVSize;
-    int messageLength = CardData.length - kPBKDFSaltSize - kAlgorithmIVSize;
+    unsigned long saltStartsAt = CardData.length - kPBKDFSaltSize;
+    unsigned long ivStartsAt = CardData.length - kPBKDFSaltSize - kAlgorithmIVSize;
+    unsigned long messageLength = CardData.length - kPBKDFSaltSize - kAlgorithmIVSize;
     NSData *Salt = [NSData dataWithBytesNoCopy:(char *)[[CardData subdataWithRange:NSMakeRange(saltStartsAt, kPBKDFSaltSize)] bytes] length:kPBKDFSaltSize];
     // Contruct a subdata of correct range, then get its bytes, use for dataWithBytesNoCopy and the length is the salt length. Recast type of data because of C++ annoyance dataWithBytesNoCopy expects the wrong type in the buffer. Final result is a pointer Salt pointing at a memory location in the original object.
     NSData *IV = [NSData dataWithBytesNoCopy:(char *)[[CardData subdataWithRange:NSMakeRange(ivStartsAt, kAlgorithmIVSize)] bytes] length:kAlgorithmIVSize];

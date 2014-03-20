@@ -9,6 +9,7 @@
 #import "EnterPasswordViewController.h"
 #import "CreditCardBrain.h"
 #import "StorageBrain.h"
+#import "EditCardViewController.h"
 
 @interface EnterPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *Password;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) UIColor *BadColor;
 @property (strong, nonatomic) NSString *CardTitle;
 @property BOOL CreditCardDeleted;
+@property (strong, nonatomic)CreditCardBrain *cardToEdit;
 @end
 
 @implementation EnterPasswordViewController
@@ -31,6 +33,13 @@
         _CardTitle = [[NSString alloc] init];
     }
     return _CardTitle;
+}
+@synthesize cardToEdit = _cardToEdit;
+-(CreditCardBrain *)cardToEdit {
+    if (_cardToEdit == nil) {
+        _cardToEdit = [[CreditCardBrain alloc] init];
+    }
+    return _cardToEdit;
 }
 -(void)AttemptCard:(NSString *)title //Call this from previous screen
 {
@@ -78,8 +87,8 @@
 
 }
 - (IBAction)EditPushed:(id)sender {
-    CreditCardBrain *cardToEdit = [CreditCardBrain createCardWithTitle:self.title forPassword:self.Password.text];
-    if (cardToEdit.sucessfulRetrieval)
+    self.cardToEdit = [CreditCardBrain createCardWithTitle:self.title forPassword:self.Password.text];
+    if (self.cardToEdit.sucessfulRetrieval)
     {
         [self performSegueWithIdentifier:@"Unlock Edit" sender:sender];
     }
@@ -111,5 +120,14 @@
     }
     return NO;
 }
+#pragma mark - Seguing
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Unlock Edit"])
+    {
+        EditCardViewController *Destination = segue.destinationViewController;
+        [Destination EditCardWithTitle:self.CardTitle withHolder:self.cardToEdit.Holder withNumber:self.cardToEdit.Number withCVN:self.cardToEdit.CVN withExpiration:self.cardToEdit.Expiration];
+    }
+}
 @end

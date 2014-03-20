@@ -10,4 +10,5 @@
 #import "CreditCardSelectController.h"
 
 @interface EditCardViewController : UIViewController <UITextFieldDelegate, CreditCardSelectControllerDelegate>
+-(void)EditCardWithTitle:(NSString *)cardTitle withHolder:(NSString *)cardHolderName withNumber:(NSString *) cardNumber withCVN:(NSString *)cardCVN withExpiration:(NSString *) cardExpiration;
 @end
